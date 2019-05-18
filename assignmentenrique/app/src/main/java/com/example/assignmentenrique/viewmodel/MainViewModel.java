@@ -52,17 +52,17 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void getMorePhotos() {
-        showLoad.setValue(true);
         if (query == null) {
+            showLoad.setValue(true);
             getFeedPhotos(false);
             return;
         }
 
         if(pages == currentPage) {
-            showLoad.setValue(false);
             return;
         }
 
+        showLoad.setValue(true);
         currentPage++;
         searchPhotos(currentPage);
     }

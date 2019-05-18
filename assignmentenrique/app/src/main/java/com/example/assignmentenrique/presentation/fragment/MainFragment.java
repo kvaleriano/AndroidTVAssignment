@@ -142,20 +142,14 @@ public class MainFragment extends VerticalGridSupportFragment {
                 return;
             }
 
-            //get current last child View
-            View lastChildView = recyclerView.getLayoutManager().getChildAt(recyclerView.getLayoutManager().getChildCount() - 1);
-            //get the bottom
-            int lastChildBottom = lastChildView.getBottom();
-            // get recyclerView's bottom
-            int recyclerBottom = recyclerView.getBottom() - recyclerView.getPaddingBottom();
-            //get last childview's position
-            int lastPosition = recyclerView.getLayoutManager().getPosition(lastChildView);
+            final int totalItemCount = recyclerView.getLayoutManager().getItemCount();
+            final int visibleItemCount = recyclerView.getLayoutManager().getChildCount();
+            final int firstVisibleItem = recyclerView.getLayoutManager().getPosition(recyclerView.getLayoutManager().getChildAt(0));
 
-
-            if (lastChildBottom == recyclerBottom && lastPosition == recyclerView.getLayoutManager().getItemCount() - 1 && !loadingNewPage) {
+            if (!loadingNewPage && (totalItemCount - visibleItemCount <= firstVisibleItem)) {
                 loadingNewPage = true;
                 mainViewModel.getMorePhotos();
-                // yes to bottom.
+                // fetch more data
             }
         }
     };
