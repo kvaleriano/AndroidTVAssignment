@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">assignmentenrique</string>
+    <string name="flickr_secret">15a2ff2252df2225</string>
+    <string name="photo_search">PHOTO SEARCH</string>
+    <string name="trending_now">Trending now on Flickr</string>
+    <string name="search_results">Search results for</string>
+    <string name="no_search_results">No search results for</string>
+</resources>

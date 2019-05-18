@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LeanbackVerticalGrid" parent="Theme.Leanback.VerticalGrid">
+        <item name="defaultSearchColor">@color/skyblue</item>
+    </style>
+    <style name="Theme.Leanback.CustomTitle" parent="Theme.LeanbackVerticalGrid">
+        <item name="browseTitleViewLayout">@layout/titleview</item>
+        <item name="browseRowsMarginTop">140dp</item>
+    </style>
+</resources>
